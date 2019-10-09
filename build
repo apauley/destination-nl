@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+dot -Kdot -Tsvg za2nl.dot -o img/za2nl.svg

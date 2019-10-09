@@ -1,0 +1,78 @@
+digraph {
+  splines=true;
+  node [shape=box];
+
+  desire [label="Obtain a desire to live and work in the Netherlands"
+  URL="https://en.m.wikipedia.org/wiki/Netherlands"]
+
+  sponsorinit [label="Get a sponsor (typically via a job offer)"]
+
+  docsind [label="Obtain a myriad of documents proving your existence:\n
+  Unabridged birth certificates of everyone applying
+  Unabridged Marriage Certificate
+  Passports of everyone applying (valid for at least 6 months)"
+
+  URL="https://ehome.dha.gov.za/eHomeAffairs/"]
+
+  apostilled [label="Get the Marriage and Birth Certificates legalised/apostilled at dirco.gov.za"
+  URL="http://www.dirco.gov.za/consular/legalisation.htm"]
+
+  ind [label="Sponsor applies at the IND - the Dutch equivalent of Home Affairs" URL="https://ind.nl/"]
+  mvvapproval [label="IND approves MVV (long-stay visa)"]
+
+  zadutchembassy [label="Make MVV appointment at Dutch Embassy in SA"
+  URL="https://www.netherlandsandyou.nl/your-country-and-the-netherlands/south-africa/travel-and-residence/applying-for-a-long-stay-visa-mvv"]
+
+  mvvcomplete [label="Get an mvv-visumsticker in each Passport (valid for 3 months)"]
+  arrangeaccom [label="Pay for flights and accommodation"]
+  gemeenteafspraak1 [label="Make an appointment at your gemeente (municipality)"]
+  gemeentebesoek [label="Be at your gemeente appointment"]
+
+  indnlafspraak [label="Make an appointment to pick up your residence card at the IND in the Netherlands"
+  URL="https://ind.nl/en/Pages/Appointment-to-collect-your-residence-document.aspx "]
+
+  gemeentedocs [label="Supply all the apostilled documents proving your existence"]
+  za2nl [label="Fly to the Netherlands"]
+  indresidence [label="Pick up residence permit card at the IND"]
+  getfibre [label="Get Fibre"]
+  startjob [label="Start a new Job"]
+  sponsor30 [label="Sponsor/Employer applies for 30% ruling"
+  URL="https://www.iamsterdam.com/en/living/take-care-of-official-matters/highly-skilled-migrants/thirty-percent-ruling"]
+
+  receive30 [label="Receive 30% ruling approval"]
+
+  bsn [label="Get a BSN – Burgerservicenummer"
+  URL="https://www.government.nl/topics/personal-data/citizen-service-number-bsn"]
+
+  bankaccount [label="Open a Bank Account"]
+  zorgverzekering [label="Apply for Zorgverzekering (Medical Aid)"]
+  doctor [label="Register at a Doctor"]
+  digid [label="Apply for a DigiD for online access to government sites"
+  URL="https://www.digid.nl/en/apply-or-activate-digid"]
+
+  desire -> docsind
+  docsind -> apostilled
+  apostilled -> ind
+  desire -> sponsorinit
+  sponsorinit -> ind
+  ind -> mvvapproval
+  mvvapproval -> zadutchembassy
+  zadutchembassy -> mvvcomplete
+  mvvcomplete -> arrangeaccom
+  arrangeaccom -> gemeenteafspraak1
+  gemeenteafspraak1 -> indnlafspraak
+  indnlafspraak -> za2nl
+  za2nl -> indresidence
+  za2nl -> gemeentebesoek
+  za2nl -> startjob
+  startjob -> sponsor30
+  sponsor30 -> receive30
+  receive30 -> "Get a Dutch Drivers license"
+  gemeentebesoek -> gemeentedocs
+  gemeentedocs -> bsn
+  bsn -> digid
+  bsn -> bankaccount
+  bankaccount -> zorgverzekering
+  zorgverzekering -> doctor
+  bankaccount -> getfibre
+}
